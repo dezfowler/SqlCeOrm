@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E3CC93E8-B1A6-450E-AA55-588495B09B7F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SqlCeOrm</RootNamespace>
+    <AssemblyName>SqlCeOrm</AssemblyName>
+    <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PlatformFamilyName>WindowsCE</PlatformFamilyName>
+    <PlatformID>E2BECB1F-8C8C-41ba-B736-9BE7D946A398</PlatformID>
+    <OSVersion>5.0</OSVersion>
+    <DeployDirSuffix>SqlCeOrm</DeployDirSuffix>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <NativePlatformName>Windows CE</NativePlatformName>
+    <FormFactorID>
+    </FormFactorID>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;$(PlatformFamilyName)</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;$(PlatformFamilyName)</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=969db8053d3322ac, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft.NET\SDK\CompactFramework\v2.0\WindowsCE\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=969db8053d3322ac, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft.NET\SDK\CompactFramework\v2.0\WindowsCE\System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.0.0, Culture=neutral, PublicKeyToken=3be235df1c8d2ad3, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <Compile Include="DataAccess\IPersistentStore.cs" />
+    <Compile Include="DataAccess\IRow.cs" />
+    <Compile Include="DataAccess\IRowSet.cs" />
+    <Compile Include="DataAccess\ISession.cs" />
+    <Compile Include="DataAccess\ITable.cs" />
+    <Compile Include="DataAccess\ITransaction.cs" />
+    <Compile Include="DataAccess\IUpdatableRow.cs" />
+    <Compile Include="DataAccess\PersistenceException.cs" />
+    <Compile Include="DataAccess\SqlCePersistenceException.cs" />
+    <Compile Include="DataAccess\SqlCePersistentStore.cs" />
+    <Compile Include="DataAccess\SqlCeRow.cs" />
+    <Compile Include="DataAccess\SqlCeRowSet.cs" />
+    <Compile Include="DataAccess\SqlCeSession.cs" />
+    <Compile Include="DataAccess\SqlCeTable.cs" />
+    <Compile Include="DataAccess\SqlCeTran.cs" />
+    <Compile Include="DataAccess\SqlCeUpdatableRow.cs" />
+    <Compile Include="DataAccess\SqlCeUpdatableRowSet.cs" />
+    <Compile Include="DataAccess\ITableExtensions.cs" />
+    <Compile Include="Mapper\FieldDescriptor`1.cs" />
+    <Compile Include="Mapper\ISupplyEntityMetadata.cs" />
+    <Compile Include="Mapper\Mapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\BatchingRepository`1.cs" />
+    <Compile Include="Repository\IEntity.cs" />
+    <Compile Include="Repository\IReadOnlyRepository.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\IRepository`1.cs" />
+    <Compile Include="Repository\ISignable.cs" />
+    <Compile Include="Repository\ISignatureAlgorithm.cs" />
+    <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\Signed.cs" />
+    <Compile Include="Repository\SigningRepository.cs" />
+  </ItemGroup>
+</Project>
